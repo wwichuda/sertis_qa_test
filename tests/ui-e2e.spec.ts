@@ -72,7 +72,7 @@ test('TC001 - Successful Product Purchase', async ({ page }) => {
     const message = await page.locator('//div[@class="sweet-alert  showSweetAlert visible"]//p').innerText()
 
     expect(header).toEqual('Thank you for your purchase!'); 
-    expect(message).toContain('Amount: 1190 USD');
+    expect(message).toContain(`Amount: ${total} USD`);
     expect(message).toContain('Card Number: 1234567890123456');
     expect(message).toContain('Name: John Doe');
 
